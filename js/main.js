@@ -1,4 +1,6 @@
 import './data.js';
 import './util.js';
-import {generateMorePosts} from './data.js';
-(generateMorePosts());
+import './miniature.js';
+// import {generateMorePosts} from './data.js';
+// (generateMorePosts());
+
