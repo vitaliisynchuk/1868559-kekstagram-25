@@ -1,6 +1,7 @@
 import './data.js';
 import './util.js';
-import './miniature.js';
-// import {generateMorePosts} from './data.js';
-// (generateMorePosts());
+import {createSimilarMiniatures} from './miniature.js';
+import {createBigPicture} from './big-picture.js';
 
+// createBigPicture();
+createSimilarMiniatures();

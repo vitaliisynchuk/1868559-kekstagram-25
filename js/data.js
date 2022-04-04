@@ -77,4 +77,4 @@ function generateMorePosts() {
   return similarPosts;
 }
 
-export {generateMorePosts};
+export {generateMorePosts, generateComments};
