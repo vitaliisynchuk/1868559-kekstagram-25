@@ -34,9 +34,8 @@ const commentIds = [];
 const COMMENT_ID_MIN = 15;
 const COMMENT_ID_MAX = 200;
 
-const avatars = [];
-const AVATAR_MIN = 15;
-const AVATAR_MAX = 200;
+const AVATAR_MIN = 1;
+const AVATAR_MAX = 6;
 
 const POSTS_NUMBER = 25;
 
@@ -47,7 +46,7 @@ const generateComments = () => {
   for (let index = 0; index < count; index++) {
     const comment = {
       id: getRandomDiferentNumber(commentIds , COMMENT_ID_MIN, COMMENT_ID_MAX),
-      avatar: `img/avatar-${getRandomDiferentNumber(avatars, AVATAR_MIN, AVATAR_MAX)}.svg`,
+      avatar: `img/avatar-${getRandomPositiveInteger(AVATAR_MIN, AVATAR_MAX)}.svg`,
       message:  getRandomArrayElement(message),
       name: getRandomArrayElement(name),
     };
@@ -77,4 +76,4 @@ function generateMorePosts() {
   return similarPosts;
 }
 
-export {generateMorePosts};
+export {generateMorePosts, generateComments};
