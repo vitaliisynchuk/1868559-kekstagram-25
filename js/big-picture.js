@@ -1,4 +1,3 @@
-import {generateMorePosts} from './data.js';
 import {generateComments} from './data.js';
 
 const createBigPicture = function(similarBigPictures) {

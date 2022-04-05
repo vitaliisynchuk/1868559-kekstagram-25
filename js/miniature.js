@@ -1,5 +1,3 @@
-import {generateMorePosts} from './data.js';
-
 const createSimilarMiniatures = function (similarMiniatures) {
   const miniatureBlock = document.querySelector('.pictures');
   const miniatureTemplate = document.querySelector('#picture')
