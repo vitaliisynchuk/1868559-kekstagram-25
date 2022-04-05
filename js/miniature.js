@@ -1,12 +1,11 @@
 import {generateMorePosts} from './data.js';
 
-const createSimilarMiniatures = function () {
+const createSimilarMiniatures = function (similarMiniatures) {
   const miniatureBlock = document.querySelector('.pictures');
   const miniatureTemplate = document.querySelector('#picture')
     .content
     .querySelector('.picture');
 
-  const similarMiniatures = generateMorePosts();
   const similarBlockFragment = document.createDocumentFragment();
 
   similarMiniatures.forEach(({url, likes, comments}) => {

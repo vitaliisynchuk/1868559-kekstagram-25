@@ -1,10 +1,12 @@
 import {generateMorePosts} from './data.js';
 import {generateComments} from './data.js';
 
-const createBigPicture = function() {
+const createBigPicture = function(similarBigPictures) {
 
   const bigPictureBlock = document.querySelector('.big-picture');
   bigPictureBlock.classList.remove('hidden');
+  const body = document.querySelector('body');
+  body.classList.add('modal-open');
   const bigPictureImg = bigPictureBlock.querySelector('.big-picture__img');
   const bigPictureLikesCount = bigPictureBlock.querySelector('.likes-count');
   const bigPictureCommentsCount = bigPictureBlock.querySelector('.comments-count');
@@ -23,7 +25,6 @@ const createBigPicture = function() {
 
   socialComments.innerHTML = '';
 
-  const similarBigPictures = generateMorePosts();
   const similarComments = generateComments();
 
   similarBigPictures.forEach(({url, likes, comments, description}) => {
@@ -46,10 +47,12 @@ const createBigPicture = function() {
 
   closeButton.addEventListener('click', () => {
     bigPictureBlock.classList.add('hidden');
+    body.classList.remove('modal-open');
   });
   document.addEventListener('keydown', (evt) => {
     if(evt.keyCode === 27) {
       bigPictureBlock.classList.add('hidden');
+      body.classList.remove('modal-open');
     }
   });
 };
