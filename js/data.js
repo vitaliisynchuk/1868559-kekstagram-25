@@ -41,7 +41,7 @@ const POSTS_NUMBER = 25;
 
 const generateComments = () => {
   const comments = [];
-  const count = getRandomPositiveInteger(1, 3);
+  const count = getRandomPositiveInteger(1, 10);
 
   for (let index = 0; index < count; index++) {
     const comment = {

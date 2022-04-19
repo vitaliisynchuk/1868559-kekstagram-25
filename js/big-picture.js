@@ -3,7 +3,7 @@ import {generateComments} from './data.js';
 const createBigPicture = function(similarBigPictures) {
 
   const bigPictureBlock = document.querySelector('.big-picture');
-  bigPictureBlock.classList.remove('hidden');
+  // bigPictureBlock.classList.remove('hidden');
   const body = document.querySelector('body');
   body.classList.add('modal-open');
   const bigPictureImg = bigPictureBlock.querySelector('.big-picture__img');
