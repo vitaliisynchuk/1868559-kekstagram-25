@@ -12,23 +12,27 @@ const pristine = new Pristine(uploadForm, {
   errorTextClass: 'img-upload__error'
 });
 
+const COMMENTAY_MAX_LENGTH = 140;
+
 function validateCommentary () {
   function commentaryLength (value) {
-    return checkStrokeLength(value, 140);
+    return checkStrokeLength(value, COMMENTAY_MAX_LENGTH);
   }
   pristine.addValidator(textDescription, commentaryLength, 'Максимум 140 символов');
 }
 
+const RE = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/;
 function validateHashtags () {
-  const re = /^#[A-Za-zА-Яа-яЁё0-9]{1,19}$/;
   const validateHashtag = (value) => {
     const hashtagArrey = value.split(' ');
-    return hashtagArrey.every((item) => re.test(item));
+    return hashtagArrey.every((item) => RE.test(item));
   };
+
+  const HASHTAGS_LENGTH = 5;
 
   function validateHashtagLength (value) {
     const hashtagArrey = value.split(' ');
-    return hashtagArrey.length <= 5;
+    return hashtagArrey.length <= HASHTAGS_LENGTH;
   }
 
   function validateHashtagRepeat (value) {
