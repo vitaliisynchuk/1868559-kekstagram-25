@@ -1,5 +1,3 @@
-import {generateComments} from './data.js';
-
 const bigPictureBlock = document.querySelector('.big-picture');
 const body = document.querySelector('body');
 const bigPictureImg = bigPictureBlock.querySelector('.big-picture__img');
@@ -9,21 +7,16 @@ const socialCaption = bigPictureBlock.querySelector('.social__caption');
 
 const socialComments = bigPictureBlock.querySelector('.social__comments');
 const socialComment = bigPictureBlock.querySelector('.social__comment');
-const socialCommentsCount = bigPictureBlock.querySelector('.social__comment-count');
-const commentsLoader = bigPictureBlock.querySelector('.comments-loader');
+// const socialCommentsCount = bigPictureBlock.querySelector('.social__comment-count');
+// const commentsLoader = bigPictureBlock.querySelector('.comments-loader');
 
 const closeButton = bigPictureBlock.querySelector('.big-picture__cancel');
 // const socialPicture = socialComment.querySelector('.social__picture');
 // const socialText = socialComment.querySelector('.social__text');
 
-const miniatureImage = document.querySelector('.pictures');
-
-
 const createBigPicture = function({url, likes, comments, description}) {
-console.log({url, likes, comments, description});
   bigPictureBlock.classList.remove('hidden');
   body.classList.add('modal-open');
-
   socialComments.innerHTML = '';
 
   bigPictureImg.querySelector('img').src = url;
